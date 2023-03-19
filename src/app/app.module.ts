@@ -14,6 +14,9 @@ import { ShowAllWalletsComponent } from './components/show-all-wallets/show-all-
 import { SearchPipe } from './pipes/search.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './components/update/update.component';
+import { FundsComponent } from './components/funds/funds.component';
+import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
+import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { UpdateComponent } from './components/update/update.component';
     DisplayAllWalletsComponent,
     ShowAllWalletsComponent,
     SearchPipe,
-    UpdateComponent
+    UpdateComponent,
+    FundsComponent,
+    WithdrawFundsComponent,
+    TranferFundsComponent
   ],
   imports: [
     BrowserModule,

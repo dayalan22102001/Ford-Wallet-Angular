@@ -9,18 +9,16 @@ import { Wallet } from 'src/app/model/wallet';
 })
 export class LoginComponent {
   
-  wallet:Wallet = {name : "",password:""};
+  wallet:Wallet = new Wallet();
   constructor(private router:Router){};
-
-
+  name?:string;
+  password?:string;
 
 // fun(){
 //   console.log("Welcome User.");
 // }
-
-submitLoginForm(){
-  if (this.wallet.name == "ford" && this.wallet.password== "ford123")
-    this.router.navigateByUrl("home");
+submitLoginForm(name?:string,password?:string){
+  console.log(name + "  " + password);
 
 }
 

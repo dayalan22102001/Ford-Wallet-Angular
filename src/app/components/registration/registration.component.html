@@ -10,7 +10,6 @@
             <p *ngIf="idRef.errors?.['required']" class="text-danger">Id is required, cant be balnk.</p>
             <p *ngIf="idRef.errors?.['min']" class="text-danger">Id nust be a positive number</p>
         </div> -->
-        <br>
         <label for = "name">Name : </label> <br>
         <input type="text" [(ngModel)] = "wallet.name" #nameRef = "ngModel" name = "wname" id = "wid" pattern="[a-zA-Z]{3,}" required>
         <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">

@@ -1,9 +1,9 @@
+<br><br>
+
 <div>
     <form class = "box" >
-    
-        <br><br>
         <label for = "name">Name : </label><br>
-        <input type="text" [(ngModel)]="wallet.name" #nameRef="ngModel" name="ename" id="ename" pattern="[A-Za-z ]{3,}"
+        <input type="text" [(ngModel)]= "wallet.name" #nameRef="ngModel" name="ename" id="ename" pattern="[A-Za-z ]{3,}"
         title="Only chars are allowed,Min 3 char required" required>
         <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
             <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
@@ -17,6 +17,6 @@
             <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be atleast 8 charaters</p>
         </div>
         <br><br>
-        <input type = "button" (click) = "submitLoginForm()" value = "submit">
+        <input type = "button" (click) = "submitLoginForm(wallet.name, wallet.password)" value = "submit">
     </form>
 </div>

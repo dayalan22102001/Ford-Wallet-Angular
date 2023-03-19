@@ -1,0 +1,22 @@
+<br><br>
+<div>
+    <form class = "box" >
+    
+        <label for = "id">Id : </label><br>
+        <input type="number" [(ngModel)]= "id" #idRef="ngModel" name="wname" id="wid" min = 0
+        title="Enter positive id only" required>
+        <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
+            <p *ngIf="idRef.errors?.['required']" class="text-danger">Id is required, cant be blank.</p>
+            <p *ngIf="idRef.errors?.['min']" class="text-danger">Id nust be a positive number</p>
+        </div>
+        <br>
+        <label for = "password">Balance : </label> <br>
+        <input type="number" [(ngModel)] = "balance" #balanceRef = "ngModel" name = "wbalance" id = "wbalance" min = 0 required>
+        <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
+            <p *ngIf="balanceRef.errors?.['required']" class="text-danger">Balance is required, cant be blank.</p>
+            <p *ngIf="balanceRef.errors?.['min']" class="text-danger">Balance must be atleast 8 charaters</p>
+        </div>
+        <br><br>
+        <input type = "button" (click) = "withdrawFunds(id,balance)" value = "submit">
+    </form>
+</div>

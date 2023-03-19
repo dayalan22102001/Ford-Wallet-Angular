@@ -31,5 +31,9 @@ export class WalletService{
   updateWallet():void{
     console.log("Wallet Updated");
   }
+
+  addFunds():void{
+    console.log("Funds Tranfered");
+  }
 }
 

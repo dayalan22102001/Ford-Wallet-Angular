@@ -24,7 +24,8 @@ export class UpdateComponent implements OnInit{
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
     this.id = this.activatedRoute.snapshot.paramMap.get("id");
-    console.log("update id:" + this.id);  this.walletBackendService.getWalletById(this.id).subscribe(
+    console.log("update id:" + this.id);  
+    this.walletBackendService.getWalletById(this.id).subscribe(
       {
         next:(data) =>{
           

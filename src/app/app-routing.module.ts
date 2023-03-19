@@ -9,6 +9,9 @@ import { DetailsComponent } from './components/details/details.component';
 import { DisplayAllWalletsComponent } from './components/display-all-wallets/display-all-wallets.component';
 import { ShowAllWalletsComponent } from './components/show-all-wallets/show-all-wallets.component';
 import { UpdateComponent } from './components/update/update.component';
+import { FundsComponent } from './components/funds/funds.component';
+import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
+import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'}, //redirect to first component
@@ -19,8 +22,11 @@ const routes: Routes = [
   // {path:'**', component:PageNotFoundComponent}, //wildcard route for a 404 page
   {path:'details/:name', component:DetailsComponent}, 
   {path:'wallet', component:DisplayAllWalletsComponent},
-  {path:'update/:id', component:UpdateComponent}
-  // {path: 'show', component:ShowAllWalletsComponent}
+  {path:'update/:id', component:UpdateComponent},
+  {path:'funds', component:FundsComponent},
+  {path: 'withdrawFunds',component:WithdrawFundsComponent},
+  {path: 'tranferFunds', component:TranferFundsComponent},
+  {path: 'show', component:ShowAllWalletsComponent}
 ];
 
 @NgModule({
