@@ -35,7 +35,7 @@ export class FundsComponent {
           this.errormsg= JSON.stringify(error.error);
         },
         complete:() =>{
-          this.msg = "Wallet Updated Successfully";
+          this.msg = "Funds Added Successfully";
           this.errormsg = "";
           console.log("Request Completed...");
         }

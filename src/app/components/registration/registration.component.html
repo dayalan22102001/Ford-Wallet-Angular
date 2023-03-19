@@ -39,3 +39,9 @@
         <input type = "button" (click) = "submitForm()" value = "submit">
     </form>
 </div>
+<div *ngIf= "msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+</div>
+<div *ngIf= "errormsg" class="alert alert-danger">
+    <p>{{errormsg}}</p> 
+</div>

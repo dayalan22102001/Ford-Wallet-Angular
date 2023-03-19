@@ -28,3 +28,9 @@
         <input type = "button" (click) = "tranferFunds(fromId,toId,balance)" value = "submit">
     </form>
 </div>
+<div *ngIf="msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+</div>
+<div *ngIf="errormsg" class="alert alert-danger">
+    <p>{{errormsg}}</p> 
+</div>

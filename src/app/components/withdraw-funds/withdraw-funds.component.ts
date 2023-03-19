@@ -33,7 +33,7 @@ export class WithdrawFundsComponent {
           this.errormsg= JSON.stringify(error.error);
         },
         complete:() =>{
-          this.msg = "Wallet Updated Successfully";
+          this.msg = "Funds Withdrawed Successfully";
           this.errormsg = "";
           console.log("Request Completed...");
         }

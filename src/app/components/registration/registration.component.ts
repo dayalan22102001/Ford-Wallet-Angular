@@ -13,6 +13,8 @@ export class RegistrationComponent {
 
   wallet:Wallet = new Wallet();
   datePipe: any;
+  msg: any;
+  errormsg:any;
 
   // wallet.doc = this.datePipe.transform(this.wallet, 'yyyy-MM-dd');
 
@@ -26,17 +28,25 @@ export class RegistrationComponent {
     let wltPost: Observable<any> = this.walletBackendService.addWallet(this.wallet);
     wltPost.subscribe(
       {
-        next:(data) => {
+        next:(data) =>{
+          
+          this.wallet = data;
           console.log(data);
         },
+
         error:(error) =>{
-          console.log(error);
+          console.log(error.error);
+          this.msg= "";
+          this.errormsg= JSON.stringify(error.error);
         },
         complete:() =>{
-          console.log("Post Request Completed...");
+          this.msg = "Wallet Created Successfully";
+          this.errormsg = "";
+          console.log("Request Completed...");
         }
       }
     )
+    
 
   }
 

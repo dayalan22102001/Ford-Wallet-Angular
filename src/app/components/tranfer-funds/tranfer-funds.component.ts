@@ -25,7 +25,7 @@ export class TranferFundsComponent {
     return this.walletBackendService.tranferFunds(fromId,toId,balance).subscribe(
       {
         next:(data) =>{
-          
+          this.msg = "Funds Tranfered Successfully";
           this.wallet = data;
           console.log(data);
         },
@@ -36,7 +36,7 @@ export class TranferFundsComponent {
           this.errormsg= JSON.stringify(error.error);
         },
         complete:() =>{
-          this.msg = "Wallet Updated Successfully";
+          this.msg = "Funds Tranfered Successfully";
           this.errormsg = "";
           console.log("Request Completed...");
         }

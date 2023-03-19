@@ -10,7 +10,7 @@
             <p *ngIf="idRef.errors?.['min']" class="text-danger">Id nust be a positive number</p>
         </div>
         <br>
-        <label for = "password">Balance : </label> <br>
+        <label for = "password">Amount to be Debited : </label> <br>
         <input type="number" [(ngModel)] = "balance" #balanceRef = "ngModel" name = "wbalance" id = "wbalance" min = 0 required>
         <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
             <p *ngIf="balanceRef.errors?.['required']" class="text-danger">Balance is required, cant be blank.</p>
@@ -19,4 +19,10 @@
         <br><br>
         <input type = "button" (click) = "withdrawFunds(id,balance)" value = "submit">
     </form>
+</div>
+<div *ngIf="msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+</div>
+<div *ngIf="errormsg" class="alert alert-danger">
+    <p>{{errormsg}}</p> 
 </div>
