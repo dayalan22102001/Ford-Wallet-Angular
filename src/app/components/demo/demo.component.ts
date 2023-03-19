@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-// import { Wallets } from './wallets';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
 })
 
-export class AppComponent {
+export class DemoComponent {
   title = 'my-app';
   date = new Date();
   carImage = "../assets/images/car.jpg";
@@ -30,13 +29,18 @@ export class AppComponent {
   {id:2, owner:"micheal",balance:3100},
   {id:3, owner:"andrew",balance:2300} ]
 
-  // wallet:Wallets={id:0, name: "", balance: 0}
+  wallet:Wallets={id:0, name: "", balance: 0}
 
-  // displayUserForm(){
-  //   console.log("displayUserForm()");
-  //   console.log(this.wallet);
+  displayUserForm(){
+    console.log("displayUserForm()");
+    console.log(this.wallet);
 
-  // }
+  }
 
+}
+export interface Wallets{
+  id?: number;
+  name?:string;
+  balance?:number;
 
 }

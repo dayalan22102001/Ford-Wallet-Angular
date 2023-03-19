@@ -1,0 +1,19 @@
+<br>
+<p>Search : </p>
+<input type="text" [(ngModel)] = "query" id = "queryId" name="query">
+<div id = "displayWallets">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let wlt of wallet | search:query">
+            <td>{{wlt.id}}</td>
+            <td>{{wlt.name}}</td>
+            <td>{{wlt.balance}}</td>
+            <td><input type = "button" class = "btn btn-danger" value="Delete" (click)="deleteWallet(wlt.id)" ></td>
+        </tr>
+    </table>
+</div>
