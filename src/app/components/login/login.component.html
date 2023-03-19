@@ -9,14 +9,14 @@
             <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
             <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are allowed.</p>
         </div>
-        <br>
+        <br><br>
         <label for = "password">Password : </label> <br>
         <input type="password" [(ngModel)] = "wallet.password" #passwordRef = "ngModel" name = "wpassword" id = "passwordid" pattern="[a-zA-Z0-9]{8,}" required>
         <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
             <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Passwordis required, cant be blank.</p>
             <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be atleast 8 charaters</p>
         </div>
-        <br><br>
+        <br><br><br>
         <input type = "button" (click) = "submitLoginForm(wallet.name, wallet.password)" value = "submit">
     </form>
 </div>

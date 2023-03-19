@@ -1,4 +1,6 @@
+<br>
 <h2> New Wallet Registration </h2>
+<br>
 <div>
     <form class = "box" >
     
@@ -16,14 +18,14 @@
             <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be blank.</p>
             <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must be atleast 3 charaters</p>
         </div>
-        <br><br>
+        
         <label for = "password">Balance : </label> <br>
         <input type="number" [(ngModel)] = "wallet.balance" #balanceRef = "ngModel" name = "wbalance" id = "wbalance" min = 0 required>
         <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
             <p *ngIf="balanceRef.errors?.['required']" class="text-danger">Balance is required, cant be blank.</p>
             <p *ngIf="balanceRef.errors?.['min']" class="text-danger">Balance must be atleast 8 charaters</p>
         </div>
-        <br><br>
+       
         <label for = "password">Password : </label> <br>
         <input type="password" [(ngModel)] = "wallet.password" #passwordRef = "ngModel" name = "wpassword" id = "wpassword" pattern="[a-zA-Z0-9]{6,}" required>
         <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">

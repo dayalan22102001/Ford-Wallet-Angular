@@ -27,8 +27,8 @@ body{
 .box{
   align-items: center;
   background-color: rgb(209, 209, 209);
-  width:500px;
-  height: 300px;
+  width:50%;
+  height: auto;
   border-radius:6px;
   margin:  auto;
   padding:10px 10px;
