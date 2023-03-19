@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Wallet } from 'src/app/model/wallet';
 import { WalletBackendService } from 'src/app/service/wallet-backend.service';
@@ -13,12 +14,12 @@ export class DisplayAllWalletsComponent implements OnInit{
 
   wallet:Wallet[] = [];
   httpClient: any;
-  // msg: string;
-  // errormsg: string;
-  constructor (private  walletService:WalletService, private walletBackendService:WalletBackendService){}
+  msg?: string;
+  errormsg?: string ;
+  constructor ( private router:Router, private walletService:WalletService, private walletBackendService:WalletBackendService){}
   ngOnInit():void {
-    // this.wallet = this.walletService.getAllWallets();
-    // console.log(this.wallet);
+    this.wallet = this.walletService.getAllWallets();
+    console.log(this.wallet);
 
     this.walletBackendService.getAllWallets().subscribe(
      { next:(data) => {
@@ -39,12 +40,17 @@ export class DisplayAllWalletsComponent implements OnInit{
     this.walletBackendService.deleteWallet(id).subscribe({ 
       next:(data) => {
       console.log("Wallet Deleted");
-      // this.msg = "wallet deleted"+id;
-      // this.errormsg = "";
+      this.msg = "wallet of id " + id +" deleted ";
+      this.errormsg = "";
+
+      this.wallet =this.wallet.filter(
+        (wlt) => wlt.id != id?true:false
+        
+      )
     },
     error:(error: any) =>{
-      // this.msg = "";
-      // this.errormsg = "Wallet could not be deleted";
+      this.msg = "";
+      this.errormsg = "Wallet could not be deleted";
       console.log("Wallet could not be deleted");
     },
     complete:() =>{
@@ -52,10 +58,16 @@ export class DisplayAllWalletsComponent implements OnInit{
     }
   });
     console.log("Wallet "+ id + " Deleted Successfully");
-    window.alert("Wallet "+ id + " Deleted Successfully");
     
   }
+
+  updateWallet(wlt:Wallet){
+    console.log("Update Wallet "+ wlt);
+    this.router.navigate(['update',wlt.id]);
+  }
   query:string = "";
+
+
   
 
 }

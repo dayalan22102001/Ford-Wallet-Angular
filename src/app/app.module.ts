@@ -13,6 +13,7 @@ import { DisplayAllWalletsComponent } from './components/display-all-wallets/dis
 import { ShowAllWalletsComponent } from './components/show-all-wallets/show-all-wallets.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     DetailsComponent,
     DisplayAllWalletsComponent,
     ShowAllWalletsComponent,
-    SearchPipe
+    SearchPipe,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

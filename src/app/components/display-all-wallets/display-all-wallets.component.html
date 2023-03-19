@@ -13,7 +13,14 @@
             <td>{{wlt.id}}</td>
             <td>{{wlt.name}}</td>
             <td>{{wlt.balance}}</td>
-            <td><input type = "button" class = "btn btn-danger" value="Delete" (click)="deleteWallet(wlt.id)" ></td>
+            <td><input type = "button" class = "btn btn-danger" value="Delete" (click)="deleteWallet(wlt.id)" >&nbsp;
+                <input type = "button" class = "btn btn-info" value="Update" (click)="updateWallet(wlt)" ></td>
         </tr>
     </table>
+</div>
+<div *ngIf="msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+</div>
+<div *ngIf="errormsg" class="alert alert-danger">
+    <p>{{errormsg}}</p> 
 </div>

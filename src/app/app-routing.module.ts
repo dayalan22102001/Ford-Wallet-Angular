@@ -8,6 +8,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { DetailsComponent } from './components/details/details.component';
 import { DisplayAllWalletsComponent } from './components/display-all-wallets/display-all-wallets.component';
 import { ShowAllWalletsComponent } from './components/show-all-wallets/show-all-wallets.component';
+import { UpdateComponent } from './components/update/update.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'}, //redirect to first component
@@ -18,6 +19,7 @@ const routes: Routes = [
   // {path:'**', component:PageNotFoundComponent}, //wildcard route for a 404 page
   {path:'details/:name', component:DetailsComponent}, 
   {path:'wallet', component:DisplayAllWalletsComponent},
+  {path:'update/:id', component:UpdateComponent}
   // {path: 'show', component:ShowAllWalletsComponent}
 ];
 

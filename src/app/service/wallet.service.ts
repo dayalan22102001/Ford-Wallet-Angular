@@ -27,5 +27,9 @@ export class WalletService{
   addWallet(newWallet:Wallet):void{
     this.wallet.push(newWallet);
   }
+
+  updateWallet():void{
+    console.log("Wallet Updated");
+  }
 }
 
