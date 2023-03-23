@@ -1,22 +1,28 @@
-<br><br>
-
+<body>
 <div>
-    <form class = "box" >
-        <label for = "name">Name : </label><br>
-        <input type="text" [(ngModel)]= "wallet.name" #nameRef="ngModel" name="ename" id="ename" pattern="[A-Za-z ]{3,}"
-        title="Only chars are allowed,Min 3 char required" required>
-        <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
-            <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
-            <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are allowed.</p>
+    <form class = "box" #regform="ngForm">
+        <label for = "email">Email : </label> <br>
+        <input type="email" [(ngModel)] = "wallet.email" ngModel [email]="true" #emailRef = "ngModel" name = "wemailname" id = "wemailid"  required>
+        <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+            <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required, cant be blank.</p>
+            <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Enter valid Email Id</p>
         </div>
         <br><br>
         <label for = "password">Password : </label> <br>
-        <input type="password" [(ngModel)] = "wallet.password" #passwordRef = "ngModel" name = "wpassword" id = "passwordid" pattern="[a-zA-Z0-9]{8,}" required>
+        <input type="password" [(ngModel)] = "wallet.password" #passwordRef = "ngModel" name = "wpassword" id = "passwordid" pattern="[a-zA-Z0-9]{6,}" required>
         <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
             <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Passwordis required, cant be blank.</p>
             <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be atleast 8 charaters</p>
         </div>
         <br><br><br>
-        <input type = "button" (click) = "submitLoginForm(wallet.name, wallet.password)" value = "submit">
+        <input type = "button" class="btn btn-success" (click) = "submitLoginForm()" value = "Login" [disabled]="!regform.valid" >
     </form>
 </div>
+
+<div *ngIf= "msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+</div>
+<div *ngIf= "error" class="alert alert-danger">
+    <p>{{error}}</p> 
+</div>
+</body>

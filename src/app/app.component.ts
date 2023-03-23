@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Wallet } from './model/wallet';
 // import { Wallets } from './wallets';
 
 @Component({
@@ -9,34 +11,57 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'my-app';
-  date = new Date();
-  carImage = "../assets/images/car.jpg";
-  name = "Ford";
-  password = "";
-  isVisible:boolean = true;
-  a:number = 10;
-  b:number = 5;
-  choice:number = 1;
-  countries = ["india","usa","uk", "japan", "china"];
-  fun(){
-    console.log("Welcome User.");
+  role:string | null ="user" ;
+  constructor (private router:Router) { }
+
+  ngOnInit(): void {
+    //throw new Error('Method not implemented.');
+    console.log("Role check!");
+    
+    this.role =sessionStorage.getItem("role");
   }
 
-  display(){
-    window.alert(this.name + ":" + this.password);
+  userLogout() {
+    console.log("User Logout!");
+    sessionStorage.clear();    
+    this.role =sessionStorage.getItem("role");
+    this.router.navigate(['registration']);
   }
-  wallets:{id:number,owner:string, balance:number}[] =[
-  {id:1, owner:"dayalan",balance:1200},
-  {id:2, owner:"micheal",balance:3100},
-  {id:3, owner:"andrew",balance:2300} ]
 
-  // wallet:Wallets={id:0, name: "", balance: 0}
+  checkRole():string{
+    let role =sessionStorage.getItem("role");
 
-  // displayUserForm(){
-  //   console.log("displayUserForm()");
-  //   console.log(this.wallet);
+    switch(role){
+      case "user":return "user"
+      
+      case "admin":return "admin"
+      default:return "public"
+    }
+  }
 
+  wallet:Wallet = new Wallet();
+  name = "";
+  
+  
+  // displayDetails(){
+  //   console.log("Details clicked");
+  //   this.router.navigate(['details',this.name]);
   // }
+
+  addFunds(){
+    this.router.navigate(['funds']);
+
+  }
+
+  withdrawFunds(){
+    this.router.navigate(['withdrawFunds']);
+
+  }
+
+  tranferFunds(){
+    this.router.navigate(['tranferFunds']);
+
+  }
 
 
 }

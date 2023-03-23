@@ -1,4 +1,4 @@
-input[type = text], input[type = password], select{
+input[type = text], input[type = password],input[type = email], select{
     width: 100%;
     margin: auto;   
     display: inline-block;
@@ -9,7 +9,6 @@ input[type = text], input[type = password], select{
 input[type = button]{
 
     width : 100%;
-    background-color: blue;
     color: white;
     padding: 16px 32px;
     text-decoration: none;
@@ -18,15 +17,17 @@ input[type = button]{
 }
 body{
     font-family: 'Open Sans', sans-serif;
-    background:#3498db;
+    /* background:#3498db; */
     margin: auto;  
     width:100%; 
     text-align:center;
-    margin: 20px 0px 20px 0px;   
+    margin: 20px 0px 20px 0px; 
+    /* height: 90vh;
+    background: linear-gradient(90deg,#8b8b8b,#8b8b8b);   */
 }
 .box{
-  align-items: center;
-  background-color: rgb(209, 209, 209);
+text-align: left;
+  background-color: rgb(146, 193, 255);
   width:50%;
   height: auto;
   border-radius:6px;

@@ -1,0 +1,42 @@
+<br> <br>
+<body>
+<div id = "displayWallets">
+    <table>
+        <tr>
+            <th>Information</th>
+            <th>Details </th>
+            
+        </tr>
+        <tr>
+            <td>Id : </td>
+            <td>{{wallet.id}}</td>
+        </tr>
+        <tr>
+            <td>Name : </td>
+            <td>{{wallet.name}}</td>
+        </tr>
+        <tr>
+            <td>Email : </td>
+            <td>{{wallet.email}}</td>
+        </tr>
+        <tr>
+            <td>Balance : </td>
+            <td>{{wallet.balance}}</td>
+        </tr>
+        <tr>
+            <td>Role : </td>
+            <td>{{wallet.role}}</td>
+        </tr>
+        <br><br>
+        <input type = "button" class = "btn btn-primary" value="Update" (click)="updateWallet(wallet)" > &nbsp;&nbsp;
+        <input type = "button" class = "btn btn-danger" value="Delete" (click)="deleteWallet(wallet.id)" >
+    </table>
+    
+</div>
+<div *ngIf="msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+</div>
+<div *ngIf="errormsg" class="alert alert-danger">
+    <p>{{errormsg}}</p> 
+</div>
+</body>

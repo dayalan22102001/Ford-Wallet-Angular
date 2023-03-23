@@ -17,6 +17,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { FundsComponent } from './components/funds/funds.component';
 import { WithdrawFundsComponent } from './components/withdraw-funds/withdraw-funds.component';
 import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TranferFundsComponent } from './components/tranfer-funds/tranfer-funds.
     UpdateComponent,
     FundsComponent,
     WithdrawFundsComponent,
-    TranferFundsComponent
+    TranferFundsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

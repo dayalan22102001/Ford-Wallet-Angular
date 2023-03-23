@@ -1,9 +1,6 @@
-<p>update works!</p>
-
+<br>
 <div>
     <form class = "box" >
-    
-        <br><br>
         <label for = "id">Id : </label><br>
         <input type="number" [(ngModel)] = "wallet.id" name="widname" id = "widid" disabled>
         <!-- <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
@@ -18,6 +15,13 @@
             <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must be atleast 3 charaters</p>
         </div>
         <br><br>
+        <label for = "email">Email : </label> <br>
+        <input type="email" [(ngModel)] = "wallet.email" #emailRef = "ngModel" name = "wemailname" id = "wemailid" 
+                pattern="/^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+        <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+            <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required, cant be blank.</p>
+            <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Enter valid Email Id</p>
+        </div>
         <label for = "password">Balance : </label> <br>
         <input type="number" [(ngModel)] = "wallet.balance" #balanceRef = "ngModel" name = "wbalancename" id = "wbalanceid" min = 0 required>
         <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
@@ -35,7 +39,7 @@
         <br><br>
         <!-- <label for = "date">Date Of Creation :</label> <br>
         <input type="date" [(ngModel)]= "wallet.doc"> -->
-        <input type = "button" (click) = "updateWallet()" value = "submit">
+        <input type = "button" class="btn btn-success"(click) = "updateWallet()" value = "Submit">
     </form>
 </div>
 <div *ngIf="msg" class="alert alert-success" >

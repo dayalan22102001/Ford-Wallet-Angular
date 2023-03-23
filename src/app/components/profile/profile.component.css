@@ -15,7 +15,7 @@ table{
     
   }
   
-  #displayWallets tr:nth-child(even){background-color: #cacaca;}
+  #displayWallets tr:nth-child(even){background-color: #f2f2f2;}
   
   #displayWallets tr:hover {background-color: #ddd;}
   
@@ -27,5 +27,19 @@ table{
     color: white;
     
 
+  }
+  body {
+    
+  
+  }
+  .prof_table {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.5em;
+  }
+  
+  .prof_table td {
+    vertical-align: top;
   }
   

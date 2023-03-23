@@ -6,12 +6,14 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Balance</th>
             <th>Actions</th>
         </tr>
         <tr *ngFor="let wlt of wallet | search:query">
             <td>{{wlt.id}}</td>
             <td>{{wlt.name}}</td>
+            <td>{{wlt.email}}</td>
             <td>{{wlt.balance}}</td>
             <td><input type = "button" class = "btn btn-danger" value="Delete" (click)="deleteWallet(wlt.id)" >&nbsp;
                 <input type = "button" class = "btn btn-info" value="Update" (click)="updateWallet(wlt)" ></td>
